@@ -12,6 +12,15 @@
 # ******************************************************************************
 '''
 
+'''
+Description - The code below does the following:
+
+             A. Writes 50 to 55 random numbers (between 0 - 100) to a text file
+             B. Opens the file and reads the numbers from it into a list
+             C. Sorts the list using bubble sort and shows it
+             D. Calculates the median 
+'''
+
 import random
 
 mySecondFile = open("somefile.txt", 'w')
