@@ -21,12 +21,15 @@ Description - The code below does the following:
              D. Calculates the median 
 '''
 
-import random
 
+# Open a file for writing
+import random
 mySecondFile = open("somefile.txt", 'w')
 
+# Generate a random number of values (X) between 50 and 55
 X = random.randint(50, 55)
 
+# Generate X random integers between 0 and 100 and write them to the file
 for i in range(0, X, 1):
     Y = random.randint(0, 100)
     mySecondFile.write(str(Y))
@@ -34,17 +37,22 @@ for i in range(0, X, 1):
         mySecondFile.write('\n')
 mySecondFile.close()
 
+# Open the file for reading
 myFile = open("somefile.txt", 'r')
+
+# Read the contents of the file and split it into a list
 listSecondFile = myFile.read().split('\n')
 myFile.close()
 
+# Print the unsorted list of random numbers
 print("Unsorted List of %i Random Numbers: \n" % X)
 print(listSecondFile)
 print(" ")
 
+# Convert the list of strings to a list of integers
 listSecondFile = [int(x) for x in listSecondFile]
 
-
+# Define a function for the bubble sort algorithm
 def bubble(list_a):
     indexing_length = len(list_a)-1
     sorted = False
@@ -58,11 +66,13 @@ def bubble(list_a):
     return list_a
 
 
+# Print the sorted list of random numbers
 print("Sorted List of the %i Random Numbers: \n" % X)
 SortedList = bubble(listSecondFile)
 print(SortedList)
 print(" ")
 
+# Calculate the median of the sorted list
 if len(SortedList) % 2 != 0:
     medianIndex = int(len(SortedList)/2)
     median1 = SortedList[medianIndex]
